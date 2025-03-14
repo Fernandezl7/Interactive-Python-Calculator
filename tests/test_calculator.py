@@ -12,4 +12,5 @@ def test_divide():
     assert Calculator.divide(2,2) == 1
 def test_multiply():
     '''Tetsing multiplication function'''
-    assert Calculator.multiply(2,2) == 2
+    assert Calculator.multiply(2,2) == 4
+    
