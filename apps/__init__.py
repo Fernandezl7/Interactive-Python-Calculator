@@ -1,8 +1,8 @@
 import pkgutil
 import importlib
+import logging
 from apps.commands import CommandHandler
 from apps.commands import Command
-import logging
 #from app.plugins.Add import register
 
 #from app.plugins.menu import MenuCommand
