@@ -1,8 +1,8 @@
 import pkgutil
 import importlib
+import logging
 from apps.commands import CommandHandler
 from apps.commands import Command
-import logging
 #from app.plugins.Add import register
 
 #from app.plugins.menu import MenuCommand
@@ -99,4 +99,3 @@ def start_app():
 
 if __name__ == "__main__":
     multiprocessing.Process(target=start_app).start()
-    
