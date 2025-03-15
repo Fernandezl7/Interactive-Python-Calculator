@@ -1,9 +1,7 @@
 """ TEST Main File """
 from decimal import Decimal
 from unittest.mock import patch, MagicMock
-
 import pytest
-#from app.calculator import Calculator
 from main import OperationCommand, main,calculate_and_print
 
 # Parameterize the test function to cover different operations and scenarios, including errors
