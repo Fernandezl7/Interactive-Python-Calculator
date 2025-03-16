@@ -1,4 +1,3 @@
-# app/plugins/menu.py
 import logging
 
 from app.commands import Command

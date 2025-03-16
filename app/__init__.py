@@ -55,7 +55,7 @@ class App:
                     print("Exiting program...")
                     sys.exit()
 
-                elif choice in ['greet', 'menu', 'history', 'llearhistory', 'deletehistory']:
+                elif choice in ['greet', 'menu', 'history', 'clearhistory', 'deletehistory']:
                     result = self.command_handler.execute_command(choice)
                     if result:
                         print(result)
