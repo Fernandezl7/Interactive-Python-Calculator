@@ -1,6 +1,6 @@
 import logging
 import sys
-from apps.commands import Command
+from app.commands import Command
 
 
 class ExitCommand(Command):

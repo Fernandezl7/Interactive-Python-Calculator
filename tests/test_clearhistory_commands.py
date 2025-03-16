@@ -1,7 +1,7 @@
 """T"""
 import unittest
 from unittest.mock import patch, MagicMock
-from apps.plugins.clearhistory import ClearHistoryCommand  # Import ClearHistoryCommand
+from app.plugins.clearhistory import ClearHistoryCommand  # Import ClearHistoryCommand
 
 class TestClearHistoryCommand(unittest.TestCase):
     """Tests for ClearHistoryCommand."""

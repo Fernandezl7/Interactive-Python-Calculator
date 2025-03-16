@@ -1,7 +1,7 @@
 """Testing"""
 import unittest
 from unittest.mock import patch
-from apps.plugins.greet import GreetCommand, register  # Import GreetCommand
+from app.plugins.greet import GreetCommand, register  # Import GreetCommand
 
 class TestGreetCommand(unittest.TestCase):
     """Unit tests for GreetCommand."""

@@ -5,8 +5,8 @@ import logging
 import logging.config
 from decimal import Decimal, InvalidOperation
 from dotenv import load_dotenv
-from apps.calculator import Calculator
-from apps import App
+from app.calculator import Calculator
+from app import App
 
 class OperationCommand:
     def __init__(self, calculator=None, operation_name=None, a=None, b=None):

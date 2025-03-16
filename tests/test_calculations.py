@@ -1,9 +1,9 @@
 '''Calculation Testing'''
 from decimal import Decimal
 import pytest
-from apps.calculator.calculation import Calculation
-from apps.calculator.calculations import Calculations
-from apps.calculator.operations import add,subtract
+from app.calculator.calculation import Calculation
+from app.calculator.calculations import Calculations
+from app.calculator.operations import add,subtract
 
 # pytest.fixture is a decorator that marks a function as a fixture,
 # a setup mechanism used by pytest to initialize a test environment.

@@ -2,7 +2,7 @@
 import unittest
 import os
 from unittest.mock import MagicMock, patch
-from apps.commands import CommandHandler, Command
+from app.commands import CommandHandler, Command
 
 class TestCommandHandler(unittest.TestCase):
     """Tests for CommandHandler class."""

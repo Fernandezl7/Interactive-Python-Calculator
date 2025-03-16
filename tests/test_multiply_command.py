@@ -5,8 +5,8 @@ Unit tests for MultiplyCommand functionality.
 import unittest
 import logging
 import pandas as pd
-from apps.commands import CommandHandler
-from apps.plugins.multiply import register  # Removed unused imports
+from app.commands import CommandHandler
+from app.plugins.multiply import register  # Removed unused imports
 
 # Disable logging for tests
 logging.disable(logging.CRITICAL)

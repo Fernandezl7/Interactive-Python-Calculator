@@ -1,6 +1,6 @@
 import logging
-from apps.commands import Command
-from apps.commands import CommandHandler
+from app.commands import Command
+from app.commands import CommandHandler
 
 class AddCommand(Command):
     def __init__(self, a, b, command_handler: CommandHandler):

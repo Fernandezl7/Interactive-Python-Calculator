@@ -1,8 +1,8 @@
 # app/plugins/History.py
 import logging
 
-from apps.commands import Command
-from apps.commands import CommandHandler
+from app.commands import Command
+from app.commands import CommandHandler
 
 class HistoryCommand(Command):
     def __init__(self, command_handler: CommandHandler):

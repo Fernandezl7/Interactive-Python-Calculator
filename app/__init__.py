@@ -2,8 +2,8 @@ import pkgutil
 import importlib
 import logging
 import sys
-from apps.commands import CommandHandler
-from apps.commands import Command
+from app.commands import CommandHandler
+from app.commands import Command
 import multiprocessing
 
 
@@ -22,7 +22,7 @@ class App:
                 for item_name in dir(plugin_module):
                     item = getattr(plugin_module, item_name)
                     try:
-                        if plugin_name in ["Menu", "History", "ClearHistory", "DeleteFromHistory"]:
+                        if plugin_name in ["menu", "history", "clearhistory", "deletehistory"]:
                             self.command_handler.register_command(plugin_name, item(self.command_handler))
                         else:
                             self.command_handler.register_command(plugin_name, item())
@@ -32,7 +32,7 @@ class App:
     def start(self):
         """Run the application, process user input, and execute commands in a loop."""
         self.load_plugins()
-        self.command_handler.execute_command("Menu")
+        self.command_handler.execute_command("menu")
 
         while True:  # REPL (Read-Eval-Print Loop)
             choice = input("Choose an option: ").strip()
@@ -41,7 +41,7 @@ class App:
                 if choice == 'C':
                     continue
 
-                elif choice in ['Add', 'Subtract', 'Multiply', 'Divide']:
+                elif choice in ['add', 'subtract', 'multiply', 'divide']:
                     a = self.get_number("   Enter the first number: ")
                     b = self.get_number("   Enter the second number: ")
 
@@ -55,7 +55,7 @@ class App:
                     print("Exiting program...")
                     sys.exit()
 
-                elif choice in ['Greet', 'Menu', 'History', 'ClearHistory', 'DeleteFromHistory']:
+                elif choice in ['greet', 'menu', 'history', 'llearhistory', 'deletehistory']:
                     result = self.command_handler.execute_command(choice)
                     if result:
                         print(result)
@@ -87,8 +87,8 @@ class App:
                 
 def start_app():
     """Start the application in a separate process."""
-    app = App()
-    app.start()
+    apps = App()
+    apps.start()
 
 
 if __name__ == "__main__":

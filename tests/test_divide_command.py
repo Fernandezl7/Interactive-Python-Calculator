@@ -6,8 +6,8 @@ Tests include normal division, division by zero, and negative number division.
 import unittest
 import logging
 import pandas as pd
-from apps.commands import CommandHandler
-from apps.plugins.divide import register  # Removed DivideCommand, if not directly used
+from app.commands import CommandHandler
+from app.plugins.divide import register  # Removed DivideCommand, if not directly used
 
 # Disable logging for tests
 logging.disable(logging.CRITICAL)

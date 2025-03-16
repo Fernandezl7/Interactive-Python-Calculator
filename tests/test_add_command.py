@@ -1,8 +1,8 @@
 """Testing Addition """
 import unittest
 from unittest.mock import MagicMock
-from apps.commands import CommandHandler
-from apps.plugins.add import AddCommand
+from app.commands import CommandHandler
+from app.plugins.add import AddCommand
 
 class TestAddCommand(unittest.TestCase):
     """Testing """

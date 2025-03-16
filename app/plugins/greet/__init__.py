@@ -1,6 +1,6 @@
 """ Greet """
 import logging
-from apps.commands import Command
+from app.commands import Command
 
 class GreetCommand(Command):
     """Command to print and log a greeting message."""

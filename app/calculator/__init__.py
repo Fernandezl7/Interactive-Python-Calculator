@@ -1,8 +1,8 @@
 from decimal import Decimal
 from typing import Callable
-from apps.calculator.calculations import Calculations
-from apps.calculator.calculation import Calculation
-from apps.calculator.operations import add,subtract,multiply,divide
+from app.calculator.calculations import Calculations
+from app.calculator.calculation import Calculation
+from app.calculator.operations import add,subtract,multiply,divide
 
 class Calculator:
     @staticmethod

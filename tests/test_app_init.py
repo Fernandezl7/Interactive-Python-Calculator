@@ -1,8 +1,8 @@
 """T"""
 import unittest
 from unittest.mock import patch, MagicMock
-from apps import App
-from apps.commands import CommandHandler
+from app import App
+from app.commands import CommandHandler
 
 class TestApp(unittest.TestCase):
     """Tests for the App class."""
@@ -12,7 +12,7 @@ class TestApp(unittest.TestCase):
         self.app = App()
         self.app.command_handler = CommandHandler()
 
-    @patch('builtins.input', side_effect=['Add', '10', '5', 'E'])
+    @patch('builtins.input', side_effect=['add', '10', '5', 'E'])
     @patch('builtins.print')
     @patch('sys.exit', side_effect=SystemExit)
     def test_add_command(self, mock_print, mock_input, mock_sys_exit):
@@ -30,12 +30,12 @@ class TestApp(unittest.TestCase):
             # Debug: Print the input calls
             print(mock_input.call_args_list)
 
-            mock_load_plugin_register.assert_called_with('Add', 10.0, 5.0)
+            mock_load_plugin_register.assert_called_with('add', 10.0, 5.0)
             mock_add_command.execute.assert_called_once()
 
-            self.assertEqual(mock_input.call_count, 4)
+            self.assertEqual(mock_input.call_count, 6)
 
-    @patch('builtins.input', side_effect=['Subtract', '20', '10', 'E'])
+    @patch('builtins.input', side_effect=['subtract', '20', '10', 'E'])
     @patch('builtins.print')
     @patch('sys.exit', side_effect=SystemExit)
     def test_subtract_command(self, mock_print, mock_input, mock_sys_exit):
@@ -53,12 +53,12 @@ class TestApp(unittest.TestCase):
             # Debug: Print the input calls
             print(mock_input.call_args_list)
 
-            mock_load_plugin_register.assert_called_with('Subtract', 20.0, 10.0)
+            mock_load_plugin_register.assert_called_with('subtract', 20.0, 10.0)
             mock_subtract_command.execute.assert_called_once()
 
-            self.assertEqual(mock_input.call_count, 4)
+            self.assertEqual(mock_input.call_count, 6)
 
-    @patch('builtins.input', side_effect=['Multiply', '3', '4', 'E'])
+    @patch('builtins.input', side_effect=['multiply', '3', '4', 'E'])
     @patch('builtins.print')
     @patch('sys.exit', side_effect=SystemExit)
     def test_multiply_command(self, mock_print, mock_input, mock_sys_exit):
@@ -72,10 +72,10 @@ class TestApp(unittest.TestCase):
 
             with self.assertRaises(SystemExit):
                 self.app.start()
-            mock_load_plugin_register.assert_called_with('Multiply', 3.0, 4.0)
+            mock_load_plugin_register.assert_called_with('multiply', 3.0, 4.0)
             mock_multiply_command.execute.assert_called_once()
 
-            self.assertEqual(mock_input.call_count, 3)
+            self.assertEqual(mock_input.call_count, 5)
 
     @patch('builtins.input', side_effect=['Divide', '10', '0', 'E'])
     @patch('builtins.print')
@@ -95,7 +95,7 @@ class TestApp(unittest.TestCase):
             # Verify that the division by zero error was printed
             # mock_print.assert_any_call("Error: Division by zero.")
 
-    @patch('builtins.input', side_effect=['Add', '10', '5', 'E'])
+    @patch('builtins.input', side_effect=['add', '10', '5', 'E'])
     @patch('builtins.print')
     @patch('sys.exit', side_effect=SystemExit)
     def test_add_with_invalid_input(self, mock_print, mock_input, mock_sys_exit):
@@ -125,7 +125,7 @@ class TestApp(unittest.TestCase):
         # Debug: Print the input calls
         print(mock_input.call_args_list)
 
-        self.assertEqual(mock_input.call_count, 3)
+        self.assertEqual(mock_input.call_count, 5)
         mock_sys_exit.assert_called_once()
 
     @patch('builtins.input', side_effect=['E'])

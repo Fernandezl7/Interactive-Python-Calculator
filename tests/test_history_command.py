@@ -1,8 +1,8 @@
 """TESTING"""
 import unittest
 from unittest.mock import patch, MagicMock
-from apps.plugins.history import HistoryCommand, register
-from apps.commands import CommandHandler
+from app.plugins.history import HistoryCommand, register
+from app.commands import CommandHandler
 
 class TestHistoryCommand(unittest.TestCase):
     """TESTING"""
