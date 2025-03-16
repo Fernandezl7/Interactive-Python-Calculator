@@ -59,9 +59,6 @@ class App:
                     result = self.command_handler.execute_command(choice)
                     if result:
                         print(result)
-                    else:
-                        print(f"Error: Command '{choice}' not found.")
-
                 else:
                     print("Invalid option. Please try again.")
 
