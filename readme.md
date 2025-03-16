@@ -100,15 +100,68 @@ This project utilizes the Command design pattern to enhance modularity and flexi
 
 ### Factory Design Pattern
 
+The Factory Design Pattern enhances flexibility and decoupling by delegating object creation to a separate method. This approach allows for modifications in the instantiation process without impacting client code, making it easier to manage and extend.
+
+A common use case is loading plugins dynamically from designated directories and creating instances of their classes without explicitly specifying their concrete implementations.
+
+<img width="759" alt="Image" src="https://github.com/user-attachments/assets/842d441d-42f2-41d9-8b6c-88bc8309cf34" />
+
 ### Facade Design Pattern
+
+The Facade Design Pattern provides a simplified interface to complex subsystems. It is particularly useful for handling intricate operations such as:
+
+Writing history data to a CSV file
+Importing data from a CSV file
+Interacting with Pandas DataFrames
+This pattern abstracts away the complexities of data handling, allowing client code to work with a single, unified interface instead of dealing with multiple subsystems.
+
+<img width="764" alt="Image" src="https://github.com/user-attachments/assets/9d381d46-9577-4605-8e84-8c29c5c51ac2" />
 
 ### Singleton Patter
 
-## DRY / LBYL / EAFP
+The Singleton Design Pattern ensures that only one instance of a class exists and provides a global access point to it. In the context of managing a history of calculations, the Singleton pattern enforces a single source of truth, preventing multiple instances from creating inconsistent states.
+
+<img width="751" alt="Image" src="https://github.com/user-attachments/assets/b2244212-e82f-4d2b-abbc-689cf818b534" />
+
+### DRY / LBYL / EAFP
+
+There are many cases where DRY,LBYL and EAFP design principles are used in this project.
+
+Below are some examples:
+
+i. DRY (Don't Repeat Yourself):
+
+The DRY principle ensures that repetitive code is extracted into reusable functions, reducing redundancy and improving maintainability. Below is an example where a common function for loading plugins is created and called multiple times throughout the project.
+
+<img width="544" alt="Image" src="https://github.com/user-attachments/assets/9f82cfc2-ed02-42d9-8fb4-dc97ad4cc0ba" />
+
+ii. LBYL (Look Before you Leap):
+
+The LBYL (Look Before You Leap) programming style checks ahead of time whether an operation is safe to perform, rather than assuming it will work and handling exceptions. 
+
+<img width="544" alt="Image" src="https://github.com/user-attachments/assets/9f82cfc2-ed02-42d9-8fb4-dc97ad4cc0ba" />
+
+iii. EAFP (Easier to Ask for Forgiveness than Permission):
+
+The EAFP principle allows the code to attempt an operation first without checking conditions upfront and handle exceptions if they occur. This is different from LBYL (Look Before You Leap), where checks are performed before execution.
+
+<img width="670" alt="Image" src="https://github.com/user-attachments/assets/62531a8b-b8b6-4295-a73f-0f7b41c24bb5" />
 
 ## Environment Variables
 
+At application startup, environmental variables are loaded from a .env file using python-dotenv. These variables are then used to configure logging, ensuring that the logging configuration path (logging_conf_path) is dynamically set.
+
+<img width="515" alt="Image" src="https://github.com/user-attachments/assets/83509b8d-4be6-4d05-b81b-9cf15a6a11d0" />
+
 ## Logging
+
+Logging is essential for debugging, runtime monitoring, and operational tracking. Below are examples demonstrating how logging is used to:
+
+✔ Inform users about interactive calculator operations (INFO).
+✔ Warn users when they enter invalid commands (WARNING).
+✔ Capture critical errors (ERROR).
+
+<img width="592" alt="Image" src="https://github.com/user-attachments/assets/75c7ff0e-4114-49d4-a78d-3a6823631df4" />
 
 ## Testing:
 
@@ -128,5 +181,7 @@ This project utilizes the Command design pattern to enhance modularity and flexi
 <img width="1146" alt="Image" src="https://github.com/user-attachments/assets/17936b16-6dca-405f-b2ec-b592b88e417a" />
 
 ### Log file output
+
+<img width="1440" alt="Image" src="https://github.com/user-attachments/assets/cffc604d-3a65-4451-ba91-4ba3916ccf06" />
 
 ## My Calculator App Video:
